@@ -20,7 +20,7 @@
         "swaggerToCSharpClient": {
             "namespace": "KService.Client",
             "className": "{controller}Client",
-            "output": "../../.client/KService.Client/KServiceClient.cs"
+            "output": "../../src/MyClient/KServiceClient.cs"
         }
     }
 }
