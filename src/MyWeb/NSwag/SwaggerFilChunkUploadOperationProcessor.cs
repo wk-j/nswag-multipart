@@ -23,8 +23,8 @@ namespace MyWeb.NSwag {
             //custom formdata (not needed for the file upload)
             data.Add(new SwaggerParameter() {
                 IsRequired = true,
-                Name = "fileName",
-                Description = "the original file name",
+                Name = "json",
+                Description = "json data",
                 Type = JsonObjectType.String,
                 Kind = SwaggerParameterKind.FormData
             });
@@ -37,6 +37,5 @@ namespace MyWeb.NSwag {
             public SwaggerFileChunkUploadAttribute() : base(typeof(SwaggerFilChunkUploadOperationProcessor)) {
             }
         }
-
     }
 }

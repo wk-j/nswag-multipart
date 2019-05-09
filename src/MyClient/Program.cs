@@ -3,6 +3,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using KService.Client;
+using Newtonsoft.Json;
 
 namespace MyClient {
     class Program {
@@ -16,7 +17,14 @@ namespace MyClient {
 
             var file = new FileParameter(stream, "README.md", "plain/text");
 
-            var rs = await upload.UploadAsync(file, "f-README.md");
+            var meta = new Metadata {
+                F1 = "F1",
+                F2 = "F2",
+                F3 = "F3"
+            };
+
+            var json = JsonConvert.SerializeObject(meta);
+            var rs = await upload.UploadWithMetadataAsync(file, json);
         }
     }
 }
