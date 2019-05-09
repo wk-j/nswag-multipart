@@ -15,7 +15,7 @@ namespace MyWeb.NSwag {
             data.Add(new SwaggerParameter() {
                 IsRequired = true,
                 Name = "file",
-                Description = "filechunk",
+                Description = "file chunk",
                 Type = JsonObjectType.File,
                 Kind = SwaggerParameterKind.FormData
             });
@@ -23,7 +23,7 @@ namespace MyWeb.NSwag {
             //custom formdata (not needed for the file upload)
             data.Add(new SwaggerParameter() {
                 IsRequired = true,
-                Name = "file-name",
+                Name = "fileName",
                 Description = "the original file name",
                 Type = JsonObjectType.String,
                 Kind = SwaggerParameterKind.FormData

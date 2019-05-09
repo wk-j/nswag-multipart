@@ -40,19 +40,19 @@ namespace KService.Client
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
     
-        /// <param name="file">filechunk</param>
-        /// <param name="file_name">the original file name</param>
+        /// <param name="file">file chunk</param>
+        /// <param name="fileName">the original file name</param>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<FileResponse> UploadAsync(FileParameter file, string file_name)
+        public System.Threading.Tasks.Task<FileResponse> UploadAsync(FileParameter file, string fileName)
         {
-            return UploadAsync(file, file_name, System.Threading.CancellationToken.None);
+            return UploadAsync(file, fileName, System.Threading.CancellationToken.None);
         }
     
-        /// <param name="file">filechunk</param>
-        /// <param name="file_name">the original file name</param>
+        /// <param name="file">file chunk</param>
+        /// <param name="fileName">the original file name</param>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        public async System.Threading.Tasks.Task<FileResponse> UploadAsync(FileParameter file, string file_name, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileResponse> UploadAsync(FileParameter file, string fileName, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Upload/Upload");
@@ -75,11 +75,11 @@ namespace KService.Client
                             content_file_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse(file.ContentType);
                         content_.Add(content_file_, "file", file.FileName ?? "file");
                     }
-                    if (file_name == null)
-                        throw new System.ArgumentNullException("file_name");
+                    if (fileName == null)
+                        throw new System.ArgumentNullException("fileName");
                     else
                     {
-                        content_.Add(new System.Net.Http.StringContent(ConvertToString(file_name, System.Globalization.CultureInfo.InvariantCulture)), "file-name");
+                        content_.Add(new System.Net.Http.StringContent(ConvertToString(fileName, System.Globalization.CultureInfo.InvariantCulture)), "fileName");
                     }
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("GET");
