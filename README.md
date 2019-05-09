@@ -1,3 +1,5 @@
 ## NSwag
 
-- multipart/form-data
+```bash
+multipart/form-data
+```
