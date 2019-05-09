@@ -1,0 +1,26 @@
+{
+    "runtime": "NetCore22",
+    "swaggerGenerator": {
+        "aspNetCoreToSwagger": {
+            "assemblyPaths": [
+                "$(OutputPath)/MyWeb.dll"
+            ]
+        }
+    },
+    "codeGenerators": {
+        "swaggerToTypeScriptClient": {
+            "className": "{controller}Client",
+            "typeScriptVersion": 1.8,
+            "template": "Fetch",
+            "output": "../../.client/generated/KServiceClient.ts",
+            "extensionCode": "../../extension/Extensions.ts",
+            "useTransformOptionsMethod": true,
+            "clientBaseClass": "ApiClientBase"
+        },
+        "swaggerToCSharpClient": {
+            "namespace": "KService.Client",
+            "className": "{controller}Client",
+            "output": "../../.client/KService.Client/KServiceClient.cs"
+        }
+    }
+}

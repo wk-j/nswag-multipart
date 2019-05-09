@@ -1,0 +1,3 @@
+## NSwag
+
+- multipart/form-data
