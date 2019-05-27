@@ -37,6 +37,7 @@ namespace MyWeb.Controllers {
         }
 
         [SwaggerFileChunkUpload]
+        [HttpPost]
         public IActionResult Upload() {
             Console.WriteLine("> Request.Form");
             foreach (var item in this.Request.Form) {

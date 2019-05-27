@@ -243,7 +243,7 @@ namespace KService.Client
                         content_.Add(new System.Net.Http.StringContent(ConvertToString(json, System.Globalization.CultureInfo.InvariantCulture)), "json");
                     }
                     request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Method = new System.Net.Http.HttpMethod("POST");
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/octet-stream"));
     
                     PrepareRequest(client_, request_, urlBuilder_);

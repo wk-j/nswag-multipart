@@ -35,6 +35,8 @@ namespace MyWeb {
             }
 
             // app.UseHttpsRedirection();
+            app.UseSwagger(config => { });
+            app.UseSwaggerUi3(config => { });
             app.UseMvc();
         }
     }
